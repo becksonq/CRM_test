@@ -1,21 +1,24 @@
 <?php
-/**
- * File: AdminController.php
- * Email: becksonq@gmail.com
- * Date: 24.04.2018
- * Time: 12:46
- */
 
 namespace app\controllers\admin;
 
 
 use yii\web\Controller;
+use Yii;
 
 class AdminController extends Controller
 {
+    public $layout = '/admin/main';
+
+    /**
+     * @return string
+     */
     public function actionIndex()
     {
-        print 'e'; die;
-        $this->render('/admin/views/site/login', []);
+        if (Yii::$app->user->isGuest) {
+            $this->redirect('/user/security/login');
+        }
+
+        return $this->render('/admin/index');
     }
 }
