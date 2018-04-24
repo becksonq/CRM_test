@@ -16,3 +16,6 @@
 </li>
 <li>разместить на битбекет
 </li>
+<br>
+Логин для входа: <strong>admin</strong><br>
+Пароль для входа: <strong>admin_</strong>

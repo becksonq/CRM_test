@@ -41,11 +41,10 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
 //            ['label' => 'About', 'url' => ['/site/about']],
 //            ['label' => 'Contact', 'url' => ['/site/contact']],
-            !Yii::$app->user->isGuest ? ['label' => 'Admin', 'url' => ['/admin/admin/index'], 'linkOptions' => ['style' => 'color: #FF0000;']] : null,
+            !Yii::$app->user->isGuest ? ['label' => 'Admin', 'url' => ['/admin/admin/index'], 'linkOptions' => ['style' => 'color: #FF0000;']] : '',
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/user/security/login']]
             ) : (
-
                 '<li>'
                 . Html::beginForm(['/user/security/logout'], 'post')
                 . Html::submitButton(

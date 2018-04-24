@@ -6,7 +6,7 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProjectsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
+//d($dataProvider);die;
 $this->title = 'Проекты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'user.username',
             'project_name',
             'cost',
-            'date_start',
-            'date_finish',
+            'date_start:date',
+            'date_finish:date',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

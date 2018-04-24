@@ -35,8 +35,9 @@ class Projects extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'cost', 'date_start', 'date_finish'], 'integer'],
+            [['user_id', 'cost',], 'integer'],
             [['project_name'], 'string', 'max' => 255],
+            [['date_start', 'date_finish'], 'required'],
             [
                 ['user_id'],
                 'exist',
@@ -60,6 +61,20 @@ class Projects extends \yii\db\ActiveRecord
             'date_start'   => 'Дата начала',
             'date_finish'  => 'Дата окончания',
         ];
+    }
+
+    /**
+     * @param bool $insert
+     * @return bool
+     */
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->date_start = strtotime($this->date_start);
+            $this->date_finish = strtotime($this->date_finish);
+            return true;
+        }
+        return false;
     }
 
     /**

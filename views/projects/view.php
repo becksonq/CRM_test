@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'user.username',
             'project_name',
             'cost',
-            'date_start',
-            'date_finish',
+            'date_start:date',
+            'date_finish:date',
         ],
     ]) ?>
 

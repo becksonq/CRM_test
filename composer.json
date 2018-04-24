@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "dmstr/yii2-adminlte-asset": "^2.1",
         "dektrium/yii2-user": "^0.9.14",
-        "kint-php/kint": "^2.2"
+        "kint-php/kint": "^2.2",
+        "kartik-v/yii2-widget-datepicker": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\Projects;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Projects */
@@ -19,9 +20,27 @@ use app\models\Projects;
 
     <?= $form->field($model, 'cost')->textInput() ?>
 
-    <?= $form->field($model, 'date_start')->textInput() ?>
+    <?= $form->field($model, 'date_start')->widget(DatePicker::class, [
+        'language'      => 'ru',
+        'type'          => DatePicker::TYPE_COMPONENT_APPEND,
+        'options'       => ['placeholder' => 'Выберите дату...'],
+        'pluginOptions' => [
+            'autoclose'      => true,
+            'format'         => 'dd-mm-yyyy',
+            'todayHighlight' => true
+        ]
+    ]) ?>
 
-    <?= $form->field($model, 'date_finish')->textInput() ?>
+    <?= $form->field($model, 'date_finish')->widget(DatePicker::class, [
+        'language'      => 'ru',
+        'type'          => DatePicker::TYPE_COMPONENT_APPEND,
+        'options'       => ['placeholder' => 'Выберите дату...'],
+        'pluginOptions' => [
+            'autoclose'      => true,
+            'format'         => 'dd-mm-yyyy',
+            'todayHighlight' => true
+        ]
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

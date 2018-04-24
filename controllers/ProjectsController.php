@@ -87,6 +87,8 @@ class ProjectsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model->date_start = Yii::$app->formatter->asDate($model->date_start);
+        $model->date_finish = Yii::$app->formatter->asDate($model->date_finish);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

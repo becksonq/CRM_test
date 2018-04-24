@@ -14,6 +14,13 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'formatter' => [
+            'locale' => 'ru-RU',
+            'dateFormat' => 'dd-MM-yyyy',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => ' ',
+            'currencyCode' => 'RUR',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'IB85hO7JX00dqay9KSDDOw7Pv5hvtlyy',
